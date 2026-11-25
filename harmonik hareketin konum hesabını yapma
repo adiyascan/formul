@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <math.h>
+
+// Basit harmonik hareket konum hesabı
+// x     : Konum (m)
+// A     : Genlik (m)
+// omega : Açısal frekans (rad/s)
+// t     : Zaman (s)
+// phi   : Faz açısı (derece)
+
+int main()
+{
+    double A, omega, t, phi;
+    double x;
+    // metre cinsinde genlik istenir ve a değişkeninde değer tutulur .
+    printf("Genlik (metre): ");
+    scanf("%lf", &A);
+
+    //açısal frekans istenir ve omega değişkeninde değer tutulur .
+    printf("Açısal frekans (rad/s): ");
+    scanf("%lf", &omega);
+
+    // zaman cinsi kullanıcıdan istenir ve t değişkeninde tutulur.
+    printf("Zaman (saniye): ");
+    scanf("%lf", &t);
+
+    //derece cinsinden değer alınır kullanıcıdan ve phi değişkeninde tutulur.
+    printf("Faz açısı (derece): ");
+    scanf("%lf", &phi);
+
+    // Faz açısını dereceden radyana çeviriyoruz.
+    //Çünkü C dilindeki cos fonksiyonu derece değil, radyan kullanır.
+    phi = phi * 3.141592653589793 / 180.0;
+
+    // Konumu hesapla
+    x = A * cos(omega * t + phi);
+    
+    // metre olarak ekrana yazdır.
+    printf("Konum: %.2f metre\n", x);
+
+    return 0;
+}
