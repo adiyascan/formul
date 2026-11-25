@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+// V   : Uçağın hava içindeki hızı (m/s)
+// S   : Kanat alanı (m²)
+// CL  : Kaldırma katsayısı
+// L   : Kaldırma kuvveti (N)
+// rho : Hava yoğunluğu (kg/m³)
+// Formül:L = 1/2 * rho * V*V * S * CL
+ 
+
+int main() {
+
+    double rho, V, S, CL;
+    double L;
+
+    // Kullanıcıdan hava yoğunluğu alınır
+    printf("Hava yogunlugunu giriniz: ");
+    scanf("%lf", &rho);
+
+    // Kullanıcıdan hız alınır
+    printf("Hizi giriniz: ");
+    scanf("%lf", &V);
+
+    // Kullanıcıdan kanat alanı alınır
+    printf("Kanat alanini giriniz: ");
+    scanf("%lf", &S);
+
+    // Kullanıcıdan kaldırma katsayısı alınır
+    printf("Kaldirma katsayisini giriniz: ");
+    scanf("%lf", &CL);
+
+    // Kaldırma kuvveti hesaplanır
+    L = 0.5 * rho * V * V * S * CL;
+
+    // Hesaplanan sonuç ekrana yazdırılır
+    printf("Kaldirma kuvveti: %.2f N\n", L);
+
+    return 0;
+} 
