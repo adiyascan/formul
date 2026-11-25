@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+// q	Dinamik basınç	Pascal (Pa)
+// rho	Hava yoğunluğu	kg/m³
+// V	Hava hızı	m/s
+//Dinamik basınç (Dynamic Pressure), hareket eden bir akışkanın (hava veya su) hızından kaynaklanan basınçtır.
+
+
+int main() {
+    double rho ,V;
+    double q;
+ 
+    printf("Uçak mühendisliğinde özellikle kanat aerodinamiği, kaldırma kuvveti ve sürükleme kuvveti hesaplamalarında kullanılır.\n");
+   
+    // Kullanıcıdan hava yoğunluğu alınır 
+    printf("Hava yogunlugunu giriniz rho (kg/m³): ");
+    scanf("%lf", &rho);
+
+    // Kullanıcıdan hız alınır
+    printf("hava hızını  giriniz( m/s): ");
+    scanf("%lf", &V);
+    
+    q = 0.5 * rho * V * V;
+
+    printf("Dinamik basınc: %.2f Pascal\n", q);
+
+    return 0;
+}
+ 
